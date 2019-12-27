@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:12.0
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      PGDATA: /pgdata
+    volumes:
+      - pgdata:/pgdata
+
+  application:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    tty: true
+
+# volumes defined for use in above configuration
+volumes:
+  app:
+  pgdata:
