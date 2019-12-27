@@ -1,3 +1,6 @@
+app.server:
+	docker-compose exec application python manage.py runserver 0.0.0.0:8000
+
 docker.bash:
 	docker-compose exec application bash
 
