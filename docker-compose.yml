@@ -17,11 +17,18 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - .:/app
+      - site-packages:/site-packages
+    ports:
+      - "8000:8000"
     depends_on:
       - db
+    environment: 
+      PYTHONUSERBASE: /site-packages
+      PATH: $PATH:/site-packages/bin
     tty: true
 
 # volumes defined for use in above configuration
 volumes:
   app:
   pgdata:
+  site-packages:
