@@ -11,10 +11,13 @@ MAX_WAIT = 10
 
 class NewVisitor(LiveServerTestCase):
 
-    def setUp(self):
+    def start_browser(self):
         options = Options()
         options.headless = True
-        self.browser = webdriver.Firefox(options=options)
+        return webdriver.Firefox(options=options)
+
+    def setUp(self):
+        self.browser = self.start_browser()
 
     def tearDown(self):
         self.browser.quit()
@@ -71,11 +74,6 @@ class NewVisitor(LiveServerTestCase):
         self.wait_for_row_in_list_table('1: Buy peacock feathers')
         self.wait_for_row_in_list_table('2: Use peacock feathers to make a fly')
 
-        # There is still a text box inviting her to add another item. She
-        # enters "Use peacock feathers to make a fly" (Edith is very
-        # methodical)
-        self.fail('Finish the test!') 
-
     def test_multiple_users_can_start_lists_at_different_urls(self):
         # Edith starts a new to-do list
         self.browser.get(self.live_server_url)
@@ -93,7 +91,7 @@ class NewVisitor(LiveServerTestCase):
         ## We use a new browser session to make sure that no information
         ## of Edith's is coming through from cookies etc
         self.browser.quit()
-        self.browser = webdriver.Firefox()
+        self.browser = self.start_browser()
 
         # Francis visits the home page.  There is no sign of Edith's
         # list
