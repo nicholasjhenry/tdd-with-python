@@ -31,6 +31,14 @@ ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 ENV PYTHONUNBUFFERED=1
 
+
+# config: pipenv to install into PYTHONUSERBASE
+ENV PIP_USER=1
+ENV PIPENV_SYSTEM=1
+ENV PATH="$PATH:/root/.local/bin:/vendor/bin"
+ENV PYTHONUSERBASE="/vendor"
+RUN pip install pipenv
+
 WORKDIR /app
 
 CMD ["/bin/bash"]

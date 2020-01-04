@@ -5,9 +5,10 @@ docker.bash:
 	docker-compose exec application bash
 
 docker.build:
+	docker-compose down --volume
 	docker-compose build --force-rm
 	docker-compose up --detach
-	docker-compose exec application pip install -r requirements.txt --user
+	docker-compose exec application pipenv install
 
 docker.up:
 	docker-compose up --detach  
