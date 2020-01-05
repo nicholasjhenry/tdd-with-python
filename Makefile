@@ -8,7 +8,7 @@ docker.build:
 	docker-compose down --volume
 	docker-compose build --force-rm
 	docker-compose up --detach
-	docker-compose exec application pipenv install
+	docker-compose exec application pipenv install --dev
 
 docker.up:
 	docker-compose up --detach  
