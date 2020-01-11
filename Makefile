@@ -33,5 +33,8 @@ secret.generate:
 test.functional:
 	docker-compose exec application python manage.py test functional_tests
 
+test.functional.staging:
+	docker-compose exec -e STAGING_SERVER=civilcode-superlists.herokuapp.com application python manage.py test functional_tests
+
 test.unit:
 	docker-compose exec application python manage.py test lists
