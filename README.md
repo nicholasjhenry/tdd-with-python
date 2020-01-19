@@ -8,7 +8,7 @@ This implementation has a number of differences:
 
 1. The development environment is hosted in a Docker container (compared to development environment
    on bare metal using virutal-env)
-2. Depdencency management uses a [Pipefile](https://www.ostechnix.com/pipenv-officially-recommended-python-packaging-tool/) 
+2. Depdencency management uses a [Pipefile](https://www.ostechnix.com/pipenv-officially-recommended-python-packaging-tool/)
    (instead of a requirements.txt)
 3. Heroku is used as the deployment environment. There fore Chapters, 9, 10 and 11 have not
    been implemented.
@@ -41,7 +41,7 @@ Part 2: Web Development Sine Qua Nons
 - [ ] ~Chapter 9: Testing Deployment Using a Staging Site~
 - [ ] ~Chapter 10: Getting to a Production-Ready Deployment~
 - [ ] ~Chapter 11: Automating Deployment with Fabric~
-- [ ] Chapter 12: Splitting our tests into multiple files, and a generic wait helper
+- [x] Chapter 12: Splitting our tests into multiple files, and a generic wait helper
 - [ ] Chapter 13: Validation at the Database Layer
 - [ ] Chapter 14: A Simple Form
 - [ ] Chapter 15: More Advanced Forms
