@@ -42,7 +42,7 @@ Part 2: Web Development Sine Qua Nons
 - [ ] ~Chapter 10: Getting to a Production-Ready Deployment~
 - [ ] ~Chapter 11: Automating Deployment with Fabric~
 - [x] Chapter 12: Splitting our tests into multiple files, and a generic wait helper
-- [ ] Chapter 13: Validation at the Database Layer
+- [x] Chapter 13: Validation at the Database Layer
 - [ ] Chapter 14: A Simple Form
 - [ ] Chapter 15: More Advanced Forms
 - [ ] Chapter 16: Dipping Our Toes, Very Tentatively, into JavaScript
